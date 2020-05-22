@@ -10,6 +10,7 @@ import {CovidData} from '../Models/CovidData';
 export class AppComponent {
   title = 'angularChartsProject';
   //title = 'Angular Charts';
+  //some change 
 
   data:Array<CovidData> = [];
   multi:any[]=[];
