@@ -1,0 +1,208 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h2 class="card-header bg-info">
+    Coronavirus I/O
+  </h2>
+  <br>
+  <!-- <h3 class="text-secondary">
+    Stats Check
+  </h3> -->
+  <div class="row ml-5">
+    <div class="col">
+      <div class="row">
+        <h3>Tabular Overview</h3>
+      </div>
+      <div class="row">
+  <div class="card">
+    <div class="card-body">
+  <!-- <h5>Understanding the leftist mind</h5>
+  <div >
+   <b>Patterns in their work</b> 
+    <ul>
+      <li>False equivalence</li>
+      <li>Over simplification</li>
+    </ul>
+  </div> -->
+  <table border="1">
+    <thead>
+      <tr>
+        <td>State/UT</td>
+        <td>Total Confirmed cases (Indian National)</td>
+        <td>Total Confirmed cases (Foreigners)</td>
+        <td>Cured</td>
+        <td>Deaths</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{item.stateName}}</td>
+        <td>{{item.totalConfirmedCasesIndians}}</td>
+        <td>{{item.totalConfirmedCasesForeigners}}</td>
+        <td>{{item.cured}}</td>
+        <td>{{item.Deaths}}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+<div class="col ml-5">
+  <div class="row">
+    <h3>Nationwide Statistics</h3>
+  </div>
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+          <ngx-charts-pie-chart
+          [view]="view2"
+          [scheme]="colorScheme"
+          [results]="single"
+          [gradient]="gradient"
+          [legend]="showLegend"
+          [legendPosition]="legendPosition"
+          [labels]="showLabels"
+          [doughnut]="isDoughnut"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+          >
+        </ngx-charts-pie-chart>
+      </div>
+    </div>
+  </div>
+   
+</div>
+</div>
+</div>
+<br>
+<br>
+  <div class="row ml-5" >
+
+  
+    <!-- <div class="col">
+        <div class="row">
+          <h4>
+            Vertical Bar Chart
+          </h4>
+        </div>
+        <div class="row">
+              <ngx-charts-bar-vertical
+              [view]="view"
+              [scheme]="colorScheme"
+              [results]="single"
+              [gradient]="gradient"
+              [xAxis]="showXAxis"
+              [yAxis]="showYAxis"
+              [legend]="showLegend"
+              [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel"
+              [xAxisLabel]="xAxisLabel"
+              [yAxisLabel]="yAxisLabel"
+              (select)="onSelect($event)">
+              </ngx-charts-bar-vertical>
+        </div>
+      </div> -->
+
+      <div class = "col">
+          <div class="row">
+          <h4>
+            Statewise Statistics
+          </h4>
+        </div>
+        <div class="row">
+          <div class="card">
+            <div class="card-body">
+          <ngx-charts-bar-horizontal-stacked
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="multi"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          (select)="onSelect($event)">
+          </ngx-charts-bar-horizontal-stacked>
+        </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="row">
+          <h4>
+            Statewise Statistis Normalized
+          </h4>
+        </div>
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+          <ngx-charts-bar-horizontal-normalized
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="multi2"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          (select)="onSelect($event)">
+          </ngx-charts-bar-horizontal-normalized>
+          </div>
+          </div>
+        </div>
+      </div>
+   
+     
+
+</div>
+<br>
+<br>
+<div class="row ml-5 mr-4 overflow-auto">
+  
+  <div class="col">
+      <div class="row">
+          <h3>Statewise Cured Cases</h3>
+        </div>
+    <div class="row">
+    <div class="card">
+      <div class="card-body">
+          <ngx-charts-bar-vertical-2d
+          [view]="view3"
+          [scheme]="colorScheme2"
+          [results]="multi3"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [legendPosition]="legendPosition2"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          [legendTitle]="legendTitle"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)">
+        </ngx-charts-bar-vertical-2d>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>
+<br>
+<div style="text-align: center" class="card-footer bg-info">
+    <h6>
+        © developed by <a href="https://www.facebook.com/rishav.mahapatra.3" target="_blank" >Rishav Mahapatra</a> 
+      </h6>
+      <h6>&bull; भारत सरकार द्वारा जनहित में जारी &bull; ಭಾರತ ಸರ್ಕಾರವು ಸಾರ್ವಜನಿಕ ಹಿತಾಸಕ್ತಿಗಾಗಿ ವಿತರಿಸಿದೆ &bull;</h6>
+</div>
